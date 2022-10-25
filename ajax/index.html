@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="never">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .box {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .box ul {
+            display: flex;
+            width: 1200px;
+        }
+        
+        li {
+            list-style: none;
+            margin-left: 10px;
+        }
+        
+        .box ul li {
+            cursor: pointer;
+        }
+        
+        .contents {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        
+        .contents ul {
+            width: 1200px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .contents ul li img {
+            width: 150px;
+            height: 200px;
+        }
+        
+        .contents ul li p {
+            width: 150px;
+            overflow: hidden;
+            font-size: 14px;
+        }
+        
+        .contents ul li div {
+            font-size: 10px;
+        }
+        
+        .act {
+            color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+        <ul class="title">
+            题材
+
+        </ul>
+        <ul class="area">
+            地区
+
+        </ul>
+        <ul class="finish">
+            进度
+
+        </ul>
+        <ul class="isFree">
+            收费
+
+        </ul>
+        <ul class="order">
+            排序
+
+        </ul>
+    </div>
+    <div class="contents">
+        <ul class="content">
+
+        </ul>
+    </div>
+
+</body>
+<script>
+    var styleId = ["全部", "热血", "古风", "玄幻", "奇幻", "悬疑", "都市", "历史", "武侠仙侠", "游戏竞技", "悬疑灵异", "架空", "青春", "西游", "现代", "正能量", "科幻"];
+    var styleIndex = [-1, 999, 997, 1016, 998, 1023, 1002, 1096, 1092, 1088, 1081, 1063, 1060, 1054, 1048, 1028, 1015];
+    var areaId = ["全部", "大陆", "日本", "韩国", "其他"];
+    var areaIndex = [-1, 1, 2, 6, 5];
+    var isFinish = ["全部", "连载", "完结"];
+    var isFree = ["全部", "免费", "收费", "等待免费"];
+    var order1 = ["人气推荐", "更新时间", "追漫人数", "上架时间"];
+
+
+
+    function init() {
+        styleId.forEach(function(ele) {
+            var li = document.createElement("li");
+            li.innerText = ele;
+            $("ul.title").append(li);
+        })
+
+        areaId.forEach(function(ele) {
+            var li = document.createElement("li");
+            li.innerText = ele;
+            $("ul.area").append(li);
+        })
+        isFinish.forEach(function(ele) {
+            var li = document.createElement("li");
+            li.innerText = ele;
+            $("ul.finish").append(li);
+        })
+        isFree.forEach(function(ele) {
+            var li = document.createElement("li");
+            li.innerText = ele;
+            $("ul.isFree").append(li);
+        })
+        order1.forEach(function(ele) {
+            var li = document.createElement("li");
+            li.innerText = ele;
+            $("ul.order").append(li);
+        })
+    }
+    init();
+
+
+    function setAct(arr, n) {
+        arr.forEach(function(item) {
+            $(item).removeClass("act");
+        })
+        $(arr[n]).addClass("act");
+    }
+
+    var title = $("ul.title li");
+    var area = $("ul.area li");
+    var finish = $("ul.finish li");
+    var Free = $("ul.isFree li");
+    var order = $("ul.order li");
+
+    setAct(document.querySelectorAll("ul.title li"), 0);
+    setAct(document.querySelectorAll("ul.area li"), 0);
+    setAct(document.querySelectorAll("ul.finish li"), 0);
+    setAct(document.querySelectorAll("ul.isFree li"), 0);
+    setAct(document.querySelectorAll("ul.order li"), 0);
+
+    getfilter(-1, -1, -1, -1, 0);
+
+    $("ul.title li").click(function() {
+        var index = $(this).index();
+        setAct(document.querySelectorAll("ul.title li"), index)
+        getfilter(getAct()[0], getAct()[1], getAct()[2], getAct()[3], getAct()[4], )
+    })
+    $("ul.area li").click(function() {
+        var index = $(this).index();
+        setAct(document.querySelectorAll("ul.area li"), index)
+        getfilter(getAct()[0], getAct()[1], getAct()[2], getAct()[3], getAct()[4], )
+    })
+    $("ul.finish li").click(function() {
+        var index = $(this).index();
+        setAct(document.querySelectorAll("ul.finish li"), index)
+        getfilter(getAct()[0], getAct()[1], getAct()[2], getAct()[3], getAct()[4], )
+    })
+    $("ul.isFree li").click(function() {
+        var index = $(this).index();
+        setAct(document.querySelectorAll("ul.isFree li"), index)
+        getfilter(getAct()[0], getAct()[1], getAct()[2], getAct()[3], getAct()[4], )
+    })
+    $("ul.order li").click(function() {
+        var index = $(this).index();
+        setAct(document.querySelectorAll("ul.order li"), index)
+        getfilter(getAct()[0], getAct()[1], getAct()[2], getAct()[3], getAct()[4], )
+    })
+
+    function getAct() {
+        var tmp = [];
+        $("ul.title li").each(function(index, item) {
+            if ($(item).hasClass("act")) {
+                tmp.push(styleIndex[index])
+            }
+        })
+        $("ul.area li").each(function(index, item) {
+            if ($(item).hasClass("act")) {
+                tmp.push(areaIndex[index])
+            }
+        })
+        $("ul.finish li").each(function(index, item) {
+            if ($(item).hasClass("act")) {
+                tmp.push(index - 1)
+            }
+        })
+
+        $("ul.isFree li").each(function(index, item) {
+            if ($(item).hasClass("act")) {
+                tmp.push(index - 1)
+            }
+        })
+        $("ul.order li").each(function(index, item) {
+            if ($(item).hasClass("act")) {
+                tmp.push(index - 1)
+            }
+        })
+        return tmp;
+    }
+
+
+    var content = document.querySelector("ul.content");
+
+
+    function getfilter(style, area, isFinish, isFree, order) {
+        $.get("https://apis.netstart.cn/bcomic/ClassPage?styleId=" + style + "&areaId=" + area + "&isFinish=" + isFinish + "&order=" + order + "&pageNum=1&pageSize=39&isFree=" + isFree + "", function(res, status) {
+            console.log(res.data);
+            $(".content").html("");
+            res.data.forEach(function(ele, i) {
+                var li = document.createElement("li");
+                var img = document.createElement("img");
+                var p = document.createElement("p");
+                var div = document.createElement("div");
+                div.innerText = "更新至" + ele.last_short_title;
+                console.log(ele.last_short_title);
+
+                li.appendChild(img);
+                img.src = ele.vertical_cover;
+                p.innerText = ele.title;
+                li.appendChild(p)
+                li.appendChild(div);
+                $(".content").append(li);
+            })
+
+        })
+    }
+</script>
+
+</html>

@@ -1,0 +1,700 @@
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    background-color: #b2b2b2;
+}
+
+header .w {
+    background: url("../image/kid_transparent.png") no-repeat;
+    background-position: right bottom;
+    background-size: 420px;
+    padding: 30px 0;
+}
+
+header .w .top .logo {
+    font-size: 36px;
+    color: #fff;
+}
+
+header .w .top .logo span {
+    color: #dc3545;
+}
+
+header .w .top .contact ul li {
+    float: left;
+    margin: 10px 20px 0 0;
+}
+
+header .w .top .contact ul li i {
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 30px;
+    float: left;
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+header .w .top .contact ul li:first-child i {
+    color: #fdb62f;
+}
+
+header .w .top .contact ul li:last-child i {
+    color: #fd4d40;
+}
+
+header .w .top .contact ul li p {
+    color: #fff;
+    font-size: 14px;
+}
+
+header .w .nav {
+    width: 100%;
+    background-color: white;
+    height: 80px;
+    border-radius: 80px;
+    margin-top: 25px;
+}
+
+header .w .nav .nav-left li {
+    float: left;
+    margin-left: 40px;
+    line-height: 80px;
+}
+
+header .w .nav .nav-left li a {
+    color: black;
+}
+
+header .w .nav .nav-left li:first-child a {
+    color: #fd4d40;
+}
+
+header .w .nav .nav-right li {
+    margin-right: 40px;
+    float: left;
+    line-height: 80px;
+}
+
+header .w .nav .nav-right li:nth-child(1) i {
+    color: #16c3b0;
+}
+
+header .w .nav .nav-right li:nth-child(2) i {
+    color: #71bc42;
+}
+
+header .w .nav .nav-right li:nth-child(3) i {
+    color: #fdb62f;
+}
+
+header .w .content {
+    width: 350px;
+    margin: 100px 0;
+}
+
+header .w .content span {
+    color: #fd4d44;
+    font-family: "Indie Flower", cursive;
+    font-size: 20px;
+}
+
+header .w .content h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+}
+
+header .w .content p {
+    color: white;
+    margin-top: 20px;
+}
+
+header .w .content div.btn {
+    width: 150px;
+    height: 50px;
+    background-color: #dc3545;
+    text-align: center;
+    border-radius: 30px 0 30px 0;
+    margin-top: 50px;
+}
+
+header .w .content div.btn a {
+    color: white;
+    line-height: 50px;
+}
+
+.container .w {
+    padding: 100px;
+}
+
+.container .w ul li {
+    width: calc(33.33% - 40px);
+    float: left;
+    margin: 0 20px;
+    position: relative;
+}
+
+.container .w ul li .circular {
+    width: 70px;
+    height: 70px;
+    background-color: #fd4d40;
+    border-radius: 50%;
+    text-align: center;
+    position: absolute;
+    top: -35px;
+    left: 150px;
+}
+
+.container .w ul li .circular i {
+    line-height: 70px;
+    font-size: 30px;
+    color: white;
+}
+
+.container .w ul li .text {
+    background-color: #fd4d40;
+    padding: 40px;
+    text-align: center;
+    color: white;
+}
+
+.container .w ul li .text h2 {
+    margin-top: 30px;
+}
+
+.container .w ul li .text p {
+    margin-top: 20px;
+    opacity: 0.7;
+}
+
+.container .w ul li:nth-child(2) .circular {
+    background-color: #fdb62f;
+}
+
+.container .w ul li:nth-child(2) .text {
+    background-color: #fdb62f;
+}
+
+.container .w ul li:nth-child(3) .circular {
+    background-color: #16c3b0;
+}
+
+.container .w ul li:nth-child(3) .text {
+    background-color: #16c3b0;
+}
+
+.about {
+    background-color: #f6f5f5;
+}
+
+.about .w {
+    padding: 100px 0;
+}
+
+.about .w .left {
+    width: 50%;
+}
+
+.about .w .left img {
+    float: left;
+}
+
+.about .w .right {
+    width: 50%;
+    padding: 90px;
+    box-sizing: border-box;
+}
+
+.about .w .right span {
+    color: #fc5040;
+    font-size: 20px;
+    font-family: "Indie Flower", cursive;
+}
+
+.about .w .right h3 {
+    font-size: 30px;
+}
+
+.about .w .right div.btn {
+    width: 150px;
+    height: 50px;
+    background-color: #ffc107;
+    border-radius: 25px 0 25px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.about .w .right div.btn a {
+    color: black;
+    font-size: 14px;
+    line-height: 50px;
+}
+
+.packages {
+    background-color: #17a2b8;
+}
+
+.packages .w {
+    padding: 100px 0;
+}
+
+.packages .w p {
+    color: #fd4d40;
+    text-align: center;
+    font-family: "Indie Flower", cursive;
+    font-size: 20px;
+}
+
+.packages .w h3 {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 30px;
+    text-align: center;
+}
+
+.packages .w ul.card {
+    margin-top: 50px;
+}
+
+.packages .w ul.card li {
+    float: left;
+    width: calc(33.33% - 30px);
+    background-color: white;
+    margin: 0 15px;
+    border-radius: 10px;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.packages .w ul.card li div.content {
+    text-align: center;
+}
+
+.packages .w ul.card li div.content img {
+    width: 100px;
+}
+
+.packages .w ul.card li div.content h2 {
+    color: #16c3b0;
+    margin-top: 30px;
+}
+
+.packages .w ul.card li div.content p {
+    color: #837e79;
+    margin-top: 30px;
+    font-family: not specified;
+    font-size: 16px;
+}
+
+.packages .w ul.card li div.content div.btn {
+    width: 200px;
+    height: 40px;
+    background-color: #dc3545;
+    border-radius: 20px 0 20px 0;
+    margin: 50px auto;
+}
+
+.packages .w ul.card li div.content div.btn a {
+    color: white;
+    line-height: 40px;
+}
+
+.packages .w ul.card li:nth-child(2) div.content h2 {
+    color: #76bc42;
+}
+
+.packages .w ul.card li:nth-child(2) div.content div.btn {
+    background-color: #ffc107;
+}
+
+.packages .w ul.card li:nth-child(2) div.content div.btn a {
+    color: black;
+}
+
+.packages .w ul.card li:nth-child(3) div.content h2 {
+    color: #e04b50;
+}
+
+.packages .w ul.card li:nth-child(3) div.content div.btn {
+    background-color: #71bc42;
+}
+
+.packages .w ul.card li:nth-child(3) div.content div.btn a {
+    color: black;
+}
+
+.packages .w ul.card li:nth-child(3) div.content div.btn:hover {
+    background-color: #60a038;
+}
+
+.packages .w ul.card li:nth-child(3) div.content div.btn:hover a {
+    color: white;
+}
+
+.pricing {
+    color: #364d59;
+}
+
+.pricing .w {
+    padding: 100px 0;
+}
+
+.pricing .w .left {
+    width: 33.33%;
+}
+
+.pricing .w .left span {
+    color: #fd5b6c;
+    font-family: "Indie Flower", cursive;
+    font-size: 20px;
+}
+
+.pricing .w .left h3 {
+    font-size: 30px;
+    margin-top: 10px;
+    color: black;
+}
+
+.pricing .w .left p {
+    padding-right: 50px;
+    margin-top: 20px;
+    line-height: 30px;
+}
+
+.pricing .w .right {
+    width: 66.66%;
+}
+
+.pricing .w .right .silver {
+    width: 50%;
+}
+
+.pricing .w .right .silver div.circular {
+    width: 100px;
+    height: 100px;
+    background-color: #16c3b0;
+    border-radius: 50%;
+    text-align: center;
+    border: 3px solid white;
+    box-sizing: border-box;
+    outline: 5px solid #16c3b0;
+}
+
+.pricing .w .right .silver div.circular p {
+    font-size: 30px;
+    line-height: 100px;
+}
+
+.pricing .w .right .silver h4 {
+    font-size: 20px;
+    margin: 30px 0;
+}
+
+.pricing .w .right .silver ul.list li {
+    margin-top: 15px;
+}
+
+.pricing .w .right .silver ul.list li i {
+    color: #25c3b0;
+    margin-right: 10px;
+}
+
+.pricing .w .right .silver div.btn {
+    width: 150px;
+    height: 40px;
+    background-color: #16c3b0;
+    border-radius: 30px 0 30px 0;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.pricing .w .right .silver div.btn a {
+    color: #364d59;
+    line-height: 40px;
+    font-weight: 400;
+}
+
+.pricing .w .right .golden {
+    width: 50%;
+}
+
+.pricing .w .right .golden div.circular {
+    width: 100px;
+    height: 100px;
+    background-color: #fd4d40;
+    border-radius: 50%;
+    text-align: center;
+    border: 3px solid white;
+    box-sizing: border-box;
+    outline: 5px solid #fd4d40;
+}
+
+.pricing .w .right .golden div.circular p {
+    font-size: 30px;
+    line-height: 100px;
+}
+
+.pricing .w .right .golden h4 {
+    font-size: 20px;
+    margin: 30px 0;
+}
+
+.pricing .w .right .golden ul.list li {
+    margin-top: 15px;
+}
+
+.pricing .w .right .golden ul.list li i {
+    color: #fd4d40;
+    margin-right: 10px;
+}
+
+.pricing .w .right .golden div.btn {
+    width: 150px;
+    height: 40px;
+    background-color: #fd4d40;
+    border-radius: 30px 0 30px 0;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.pricing .w .right .golden div.btn a {
+    color: white;
+    font-weight: 400;
+    line-height: 40px;
+}
+
+.client {
+    background-color: #f6f5f5;
+}
+
+.client .w {
+    width: 800px;
+    padding: 100px 0;
+}
+
+.client .w p {
+    text-align: center;
+    color: #fc6065;
+    font-family: "Indie Flower", cursive;
+    font-size: 20px;
+}
+
+.client .w h3 {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 15px;
+}
+
+.client .w .msg {
+    width: 100%;
+    background-color: #fd4d40;
+    margin-top: 50px;
+}
+
+.client .w .msg img {
+    width: 100px;
+    height: 100px;
+    float: left;
+    padding: 50px 50px 150px 50px;
+}
+
+.client .w .msg .content {
+    width: 75%;
+    float: left;
+    padding: 35px 50px 50px 0;
+    box-sizing: border-box;
+}
+
+.client .w .msg .content h3 {
+    color: white;
+    text-align: left;
+    font-size: 20px;
+}
+
+.client .w .msg .content p {
+    color: white;
+    text-align: left;
+    line-height: 35px;
+    font-family: not specified;
+}
+
+.client .w .msg .content .position {
+    margin: 20px 0;
+    opacity: 0.5;
+}
+
+.client .w ul {
+    margin-top: 50px;
+}
+
+.client .w ul li {
+    float: left;
+    width: calc(25% - 40px);
+    margin: 0 20px;
+    text-align: center;
+    color: #364d59;
+}
+
+.client .w ul li span {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.client .w ul li:first-child span {
+    color: #16c3b0;
+}
+
+.client .w ul li:nth-child(2) span {
+    color: #fdb62f;
+}
+
+.client .w ul li:nth-child(3) span {
+    color: #71bc42;
+}
+
+.client .w ul li:nth-child(4) span {
+    color: #dc3545;
+}
+
+.warning {
+    background-color: #ffc107;
+}
+
+.warning .w {
+    position: relative;
+}
+
+.warning .w h3 {
+    float: left;
+    font-size: 30px;
+    color: white;
+    line-height: 130px;
+}
+
+.warning .w div.btn {
+    width: 200px;
+    height: 50px;
+    background-color: #dc3545;
+    border-radius: 25px 0 25px 0;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+.warning .w div.btn a {
+    color: white;
+    line-height: 50px;
+}
+
+.warning .w div.btn:hover {
+    background-color: #c82333;
+}
+
+.footer {
+    background-color: #343a40;
+}
+
+.footer .w {
+    padding: 100px 0 150px 0;
+}
+
+.footer .w ul.left {
+    width: 50%;
+}
+
+.footer .w ul.left li {
+    color: #fd4940;
+}
+
+.footer .w ul.left li p {
+    width: 350px;
+    color: white;
+    line-height: 30px;
+    margin: 20px 0 50px 0;
+}
+
+.footer .w ul.left li .email {
+    margin-top: 20px;
+}
+
+.footer .w ul.left li .email input {
+    float: left;
+    width: 200px;
+    line-height: 50px;
+    outline: none;
+    font-size: 16px;
+    margin-right: 15px;
+}
+
+.footer .w ul.left li .email div.btn {
+    width: 100px;
+    height: 60px;
+    background-color: #dc3545;
+    border-radius: 60px;
+    text-align: center;
+}
+
+.footer .w ul.left li .email div.btn a {
+    color: white;
+    line-height: 60px;
+}
+
+.footer .w ul.right {
+    width: 50%;
+}
+
+.footer .w ul.right li {
+    float: left;
+    width: 50%;
+    color: #ed4640;
+}
+
+.footer .w ul.right li ul {
+    margin-top: 20px;
+}
+
+.footer .w ul.right li ul li {
+    width: 100%;
+    line-height: 40px;
+}
+
+.footer .w ul.right li ul li a {
+    color: #d6d8d9;
+    transition: all 0.5s;
+}
+
+.footer .w ul.right li ul li:hover a {
+    color: #ffffff;
+}
+
+.footer .w .copy {
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 100px;
+}
+
+.footer .w .copy p {
+    color: white;
+    margin-top: 50px;
+}
+
+.footer .w .copy p i {
+    color: #dc3545;
+}
+
+.footer .w .copy p a {
+    color: white;
+    opacity: 0.8;
+}
+
+
+/*# sourceMappingURL=./style.css.map */

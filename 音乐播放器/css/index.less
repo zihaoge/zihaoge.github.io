@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #dfe7ef;
+}
+
+.musicBox {
+    width: 350px;
+    height: 500px;
+    background-color: #e8ecf2;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+
+    .left {
+        width: 250px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        .imgBox {
+            width: 250px;
+            height: 250px;
+            border-radius: 20px;
+            position: relative;
+
+            img {
+                width: 250px;
+                height: 250px;
+                border-radius: 20px;
+                position: absolute;
+                top: 0;
+                left: -30px;
+                box-shadow: 0 15px 10px 0 rgba(0, 0, 0, 0.5);
+
+            }
+        }
+
+        .title {
+            width: 250px;
+            height: 100px;
+            padding: 20px;
+            box-sizing: border-box;
+
+            h3 {
+                font-size: 25px;
+                color: #6c7999;
+            }
+
+            p {
+                font-size: 25px;
+                color: #9ba7bb;
+            }
+        }
+    }
+
+    .right {
+        width: 100px;
+        height: 330px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 20px;
+
+        .sbox {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            font-size: 25px;
+            position: relative;
+
+            .bg {
+                width: 65px;
+                height: 65px;
+                background-color: white;
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-radius: 50%;
+                opacity: 0;
+                transform: scale(0);
+                transition: all .2s;
+            }
+
+            i {
+                width: 25px;
+                height: 25px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                color: #acb8cc;
+
+                &.red {
+                    color: red;
+                }
+            }
+
+            &:hover .bg {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+
+        }
+
+        .isPlay {
+            i {
+                font-size: 100px;
+                color: white;
+                font-weight: 100;
+            }
+        }
+
+
+    }
+
+    .audio {
+        width: 90%;
+        height: 100px;
+        // background-color: aqua;
+
+        .time {
+            width: 100%;
+            text-align: right;
+        }
+
+        label {
+            height: 15px;
+            display: block;
+            position: relative;
+            overflow: hidden;
+            z-index: 9;
+
+            input[type="range"] {
+                width: 300px;
+                height: 100%;
+                display: block;
+                opacity: 0;
+                margin: 0;
+            }
+            .jindu {
+                width: 300px;
+                height: 60%;
+                background-color: #171719;
+                border-radius: 5px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                margin: auto;
+                z-index: -1;
+                .mask {
+                    width: 0px;
+                    height: 100%;
+                    background-color: #b82626;
+                    border-radius: 5px 0 0 5px;
+                }
+                .dot {
+                    width: 4px;
+                    height: 4px;
+                    background-color: #b82626;
+                    border: 5px solid white;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    margin: auto;
+                }
+            }
+        }
+    }
+}

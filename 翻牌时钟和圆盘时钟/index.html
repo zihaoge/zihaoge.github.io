@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+        
+        .box {
+            width: 500px;
+            height: 500px;
+            /* background: linear-gradient(24deg, blue, #10ff10); */
+            background: linear-gradient(132deg, #1dbdff, #4cff6e, #fa057e, #fdfc47, #24fe41);
+            background-size: 600%;
+            border-radius: 50%;
+            transition: all 1s;
+            position: relative;
+            box-shadow: 0px 0px 27px #10ff10, -5px -2px 27px #1010ff;
+            animation: bk 10s ease infinite;
+        }
+        
+        .box.active {
+            width: 600px;
+            height: 250px;
+            background-color: green;
+            border-radius: 10px;
+        }
+        
+        @keyframes bk {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        .box .circle {
+            width: 450px;
+            height: 450px;
+            background-color: yellow;
+            border-radius: 50%;
+            transition: all 1s;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        
+        .box .circle .tail {
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: lightgreen;
+        }
+        
+        .box .circle .tail i {
+            display: block;
+        }
+        
+        .box .circle .tail i.b {
+            width: 8px;
+            height: 40px;
+            background-color: lightcoral;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -4px;
+        }
+        
+        .box .circle .tail i.s {
+            width: 4px;
+            height: 20px;
+            background-color: aqua;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .box .circle .point {
+            width: 15px;
+            height: 15px;
+            background-color: lightcyan;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            z-index: 9;
+        }
+        
+        .box .circle .needle {
+            width: 450px;
+            height: 450px;
+            position: relative;
+            border-radius: 50%;
+        }
+        
+        .box .circle .needle .chour {
+            width: 4px;
+            height: 210px;
+            background-color: aqua;
+            transform: rotate(0deg);
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            margin-left: -2px;
+            transform-origin: center 165px;
+            border-radius: 2px;
+        }
+        
+        .box .circle .needle .cminute {
+            width: 4px;
+            height: 220px;
+            background-color: lightcoral;
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            margin-left: -2px;
+            transform-origin: center 175px;
+            border-radius: 2px;
+        }
+        
+        .box .circle .needle .csecond {
+            width: 4px;
+            height: 230px;
+            background-color: red;
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            margin-left: -2px;
+            transform-origin: center 185px;
+            border-radius: 2px;
+        }
+        /* 翻牌时钟 */
+        
+        .box .rec {
+            width: 550px;
+            height: 200px;
+            background-color: #b0b0b0;
+            border-radius: 10px;
+            transition: all 1s;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 60px;
+            color: white;
+        }
+        
+        .box .rec .b {
+            display: flex;
+        }
+        
+        .box .rec .b div {
+            width: 50px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border-radius: 10px;
+            margin: 0 5px;
+        }
+        
+        .box .rec .b div span {
+            width: 100%;
+            height: 100%;
+            background-color: #444;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            transition: all .3s;
+        }
+        
+        .scale {
+            transform: scale(0);
+        }
+        /* 按钮 */
+        
+        .btn {
+            width: 100px;
+            height: 50px;
+            background-color: #f4f4f4;
+            overflow: hidden;
+            border-radius: 25px;
+            position: absolute;
+            top: 50px;
+            right: 50px;
+        }
+        
+        .btn .move {
+            width: 150px;
+            height: 50px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            transition: all .5s;
+        }
+        
+        .btn .move .dot {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #10ff10;
+        }
+        
+        .change {
+            transform: translateX(-50px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="circle">
+            <div class="tail">
+
+            </div>
+            <div class="point"></div>
+            <div class="needle">
+                <div class="chour"></div>
+                <div class="cminute"></div>
+                <div class="csecond"></div>
+            </div>
+        </div>
+        <div class="rec scale">
+            <div class="hour b">
+                <div class="s1">
+                    <span>0</span>
+                </div>
+                <div class="s2">
+                    <span>0</span>
+                </div>
+            </div>
+            :
+            <div class="minute b">
+                <div class="s1">
+                    <span>0</span>
+                </div>
+                <div class="s2">
+                    <span>0</span>
+                </div>
+            </div>
+            :
+            <div class="second b">
+                <div class="s1">
+                    <span>0</span>
+                </div>
+                <div class="s2">
+                    <span>0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="btn">
+        <div class="move change">
+            <span>圆</span>
+            <div class="dot"></div>
+            <span>方</span>
+        </div>
+    </div>
+</body>
+<script>
+    // 切换时钟
+    $(".btn").click(function() {
+        $(".box").toggleClass("active");
+
+        let boxWidth = $(".box")[0].offsetWidth;
+
+        if (boxWidth == 500) {
+            $(".box .circle").toggleClass("scale");
+            setTimeout(() => {
+                $(".box .rec").toggleClass("scale");
+            }, 1000)
+        }
+        if (boxWidth == 600) {
+            $(".box .rec").toggleClass("scale");
+            setTimeout(() => {
+                $(".box .circle").toggleClass("scale");
+            }, 1000)
+        }
+
+    })
+
+
+    // 翻牌时钟
+    function showNewNum(ele, n) {
+        var spanDom = ele.querySelector("span");
+        if (spanDom.innerText != n) {
+            var newSpan = document.createElement("span");
+            newSpan.innerText = n;
+            ele.appendChild(newSpan);
+            spanDom.style.marginTop = "-100px";
+            setTimeout(function() {
+                ele.removeChild(spanDom);
+            }, 300);
+        }
+    }
+
+    setInterval(function() {
+        var time = new Date();
+
+        var h = String(time.getHours()).padStart(2, '0');
+        var m = String(time.getMinutes()).padStart(2, '0');
+        var s = String(time.getSeconds()).padStart(2, '0');
+
+        var hourDom = document.querySelector(".hour");
+        var hDiv = hourDom.querySelectorAll("div");
+
+        var minuteDom = document.querySelector(".minute");
+        var mDiv = minuteDom.querySelectorAll("div");
+
+        var secondDom = document.querySelector(".second");
+        var sDiv = secondDom.querySelectorAll("div");
+
+        hDiv.forEach(function(e, i) {
+            showNewNum(e, h[i]);
+        });
+        mDiv.forEach(function(e, i) {
+            showNewNum(e, m[i]);
+        });
+        sDiv.forEach(function(e, i) {
+            showNewNum(e, s[i]);
+        });
+    }, 1000);
+
+
+    // 圆盘时钟
+    for (let i = 0; i < 60; i++) {
+        var iDom = document.createElement("i");
+        var circleWidth = $(".circle")[0].clientWidth;
+        iDom.style.transformOrigin = "center " + (circleWidth / 2) + "px";
+        if (i % 5 == 0) {
+            iDom.className = "b";
+        } else {
+            iDom.className = "s";
+        }
+        iDom.style.transform = "rotate(" + i * (360 / 60) + "deg)";
+        $(".tail")[0].appendChild(iDom);
+    }
+    setInterval(() => {
+        var date = new Date();
+        var h = date.getHours();
+        var m = date.getMinutes();
+        var s = date.getSeconds();
+        $(".chour")[0].style.transform = "rotate(" + (h + ((m + s / 60) / 60)) * 30 + "deg)";
+        $(".cminute")[0].style.transform = "rotate(" + (m * (360 / 60) + s * 6 / 360) + "deg)";
+        $(".csecond")[0].style.transform = "rotate(" + (s * 6) + "deg)";
+
+    }, 1000);
+
+
+    // 按钮
+    $(".btn").click(function() {
+        $(this).find(".move").toggleClass("change");
+    })
+</script>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>抽奖</title>
+    <style>
+        .bigbox {
+            width: 500px;
+            height: 600px;
+            margin: 0 auto;
+        }
+        
+        .bigbox .text {
+            width: 500px;
+            height: 50px;
+            box-shadow: 0 0 5px 0 black;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+        }
+        
+        .bigbox .select {
+            width: 500px;
+            height: 500px;
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        .bigbox .select div {
+            width: 140px;
+            height: 140px;
+            text-align: center;
+            line-height: 140px;
+            border-radius: 10px;
+            box-shadow: 0 0 3px 0;
+        }
+        
+        .bigbox .select .defaul {
+            background-color: aqua;
+        }
+        
+        .bigbox .select .start {
+            background-color: orange;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bigbox">
+        <div class="text"></div>
+        <div class="select">
+            <div class="defaul">iphone14</div>
+            <div class="defaul">平板</div>
+            <div class="defaul">电磁炉</div>
+            <div class="defaul">电视</div>
+            <div class="start">开始</div>
+            <div class="defaul">洗衣机</div>
+            <div class="defaul">电脑</div>
+            <div class="defaul">冰箱</div>
+            <div class="defaul">衣柜</div>
+        </div>
+    </div>
+</body>
+<script>
+    var count = 0;
+    var textEl = document.querySelector(".text");
+    var defaulEl = document.querySelectorAll(".defaul");
+    var startEl = document.querySelector(".start");
+    var time;
+    var random;
+    // 设置转动的顺序
+    var arr = [0, 1, 2, 4, 7, 6, 5, 3];
+
+    // 初始化
+    defaulEl[0].style.backgroundColor = "lightcoral";
+
+    function turn() {
+        // 获取随机数，每次转的时间不一样
+        random = Math.floor(Math.random() * 5);
+        console.log(5 + random + "秒");
+
+        // 设置定时器用来执行默认样式和选择样式
+        time = setInterval(function() {
+            defaulEl[arr[count]].style.backgroundColor = "aqua";
+            count++;
+            if (count == 8) {
+                count = 0;
+            }
+            defaulEl[arr[count]].style.backgroundColor = "lightcoral";
+        }, 100);
+
+        // 清除点击事件
+        startEl.onclick = null;
+        startEl.style.cursor = "not-allowed";
+    }
+
+    startEl.onclick = function() {
+        turn();
+        // 随机时间清除定时器
+        setInterval(function() {
+            clearInterval(time);
+            textEl.innerHTML = "恭喜你获得了 " + defaulEl[arr[count]].innerHTML;
+            startEl.style.cursor = "pointer";
+            // 重新设置点击事件
+            startEl.onclick = function() {
+                turn();
+            }
+        }, (5 + random) * 1000);
+    }
+</script>
+
+</html>

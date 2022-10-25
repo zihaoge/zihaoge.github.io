@@ -1,0 +1,47 @@
+.bigbox {
+    width: 100%;
+    height: 400px;
+    background: url(./image/2.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bigbox .box {
+    width: 700px;
+    height: 300px;
+    background-color: lightblue;
+    display: flex;
+}
+
+.bigbox .box div {
+    width: 50px;
+    height: 100%;
+    background-color: lightcoral;
+    background-position: top center;
+    background-size: auto 100%;
+    transition: all 0.5s;
+}
+
+.bigbox .box div:nth-child(1) {
+    background: url(../image/1.webp);
+}
+
+.bigbox .box div:nth-child(2) {
+    width: 500px;
+    background: url(../image/2.webp);
+}
+
+.bigbox .box div:nth-child(3) {
+    background: url(../image/3.webp);
+}
+
+.bigbox .box div:nth-child(4) {
+    background: url(../image/4.webp);
+}
+
+.bigbox .box div:nth-child(5) {
+    background: url(../image/5.webp);
+}

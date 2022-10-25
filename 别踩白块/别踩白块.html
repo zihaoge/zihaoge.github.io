@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>别踩白块</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ccc;
+        }
+        
+        .bigbox {
+            width: 400px;
+            height: 700px;
+            position: relative;
+            margin: 0 auto;
+        }
+        
+        .bigbox .box {
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 0 5px 0 black;
+            background-color: white;
+            position: absolute;
+            top: 10px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            overflow: hidden;
+        }
+        
+        .bigbox .box i {
+            display: block;
+            width: 100px;
+            height: 150px;
+            background-color: #ccc;
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+        }
+        
+        .bigbox .box i.hidden {
+            display: block;
+            width: 100px;
+            height: 150px;
+            background-color: white;
+        }
+        
+        .bigbox .over {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 400px;
+            height: 700px;
+            display: none;
+        }
+        
+        .bigbox .over span {
+            display: block;
+            width: 200px;
+            height: 200px;
+            box-shadow: 0 0 5px 0 black;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            text-align: center;
+            line-height: 200px;
+            font-size: 36px;
+            font-weight: bold;
+            background-color: white;
+            z-index: 9;
+        }
+        
+        .bigbox .over span button {
+            width: 200px;
+            height: 50px;
+        }
+        
+        .bigbox .score {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 10px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            color: aqua;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            pointer-events: none;
+        }
+        
+        .bigbox .start {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 400px;
+            height: 700px;
+            background-color: rgba(0, 0, 0, 0.1);
+            z-index: 9;
+        }
+        
+        .bigbox .start button {
+            width: 200px;
+            height: 50px;
+            border: none;
+            box-shadow: 0 0 5px 0 black;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bigbox">
+        <div class="start">
+            <button>开始游戏</button>
+        </div>
+        <div class="box">
+
+        </div>
+        <div class="over">
+            <span>
+                游戏结束!
+                <button>重新开始</button>
+            </span>
+        </div>
+        <div class="score">00</div>
+    </div>
+</body>
+<script>
+    var boxEl = document.querySelector(".box");
+    var overEL = document.querySelector(".bigbox .over");
+    var scoreEl = document.querySelector(".score");
+    var startEL = document.querySelector(".start");
+    var startBtn = document.querySelector(".bigbox .start button");
+    var againBtn = document.querySelector(".bigbox .over button");
+    var dots = [];
+    var score = 0;
+    var speed = 0.01;
+    var id;
+
+    // 构造器
+    function Dot(y) {
+        this.x = Math.floor(Math.random() * 4);
+        this.y = y;
+
+        // 创建节点
+        this.node = document.createElement("i");
+        // 更新视图
+        this.updateView();
+        // 追加到视图
+        boxEl.appendChild(this.node);
+
+        // 使用_this保存实例对象
+        var _this = this;
+        this.node.onclick = function() {
+            _this.node.classList.add("hidden");
+            _this.hidden = true;
+            event.stopPropagation();
+
+            // 设置分数
+            score++;
+            if (score % 10 == 0) {
+                speed += 0.005;
+            }
+
+            if (score < 10) {
+                score = "0" + score;
+            }
+            scoreEl.innerHTML = score;
+        }
+    }
+
+    // 点中白块以外的结束游戏
+    boxEl.onclick = function() {
+        clearInterval(id);
+        overEL.style.display = "block";
+    }
+
+    // 移动
+    Dot.prototype.move = function() {
+        this.y += speed;
+    }
+
+    // 更新视图方法
+    Dot.prototype.updateView = function() {
+        this.node.style.top = this.y * 150 + 'px';
+        this.node.style.left = this.x * 100 + 'px';
+    }
+
+    // 初始化
+    function init() {
+        for (var i = 1; i >= 0; i--) {
+            var d = new Dot(i);
+            dots.push(d);
+        }
+    }
+
+
+    function timer() {
+        init();
+        // 设置定时器
+        id = setInterval(() => {
+            // 遍历游戏界面全部白块，调用方法
+            dots.forEach(function(dot) {
+                dot.move();
+                dot.updateView();
+            });
+
+            // 当最后一个元素完全进入游戏界面就生成一个新的元素
+            if (dots[dots.length - 1].y >= 0) {
+                var d = new Dot(-1);
+                dots.push(d);
+            }
+
+            // 找出没有hidden属性的元素，放在一个新数组里面
+            var firstUnHidden = dots.filter(function(e) {
+                return !e.hidden;
+            })[0];
+
+            // 当最下面的元素的下边到游戏界面的下边清除定时器
+            if (firstUnHidden && (firstUnHidden.y + 1) * 150 >= boxEl.clientHeight) {
+                clearInterval(id);
+                overEL.style.display = "block";
+
+                console.log((firstUnHidden.y + 1) * 150);
+            }
+
+            // 找到有hidden属性的元素，放到一个新数组里面
+            var firstHidden = dots.filter(function(e) {
+                return e.hidden;
+            })[0];
+
+            // 超过游戏界面最下面就删除元素
+            if (firstHidden && firstHidden.y * 150 > boxEl.clientHeight) {
+                boxEl.removeChild(firstHidden.node);
+                dots.splice(dots.indexOf(firstHidden), 1);
+            }
+        }, 10);
+    }
+
+    // 开始游戏
+    startBtn.onclick = function() {
+        startEL.style.display = "none";
+        timer();
+    }
+
+    // 重新开始
+    againBtn.onclick = function() {
+        // 隐藏结束界面
+        overEL.style.display = "none";
+        // 恢复默认值
+        score = 0;
+        speed = 0.01;
+        scoreEl.innerHTML = score;
+        // 清除上次节点
+        boxEl.innerHTML = "";
+        dots.splice(0, dots.length);
+        document.querySelectorAll("i").forEach(function(ele) {
+            boxEl.removeChild(ele);
+        });
+        // 重新调用
+        timer();
+        // location.reload(true);
+    }
+</script>
+
+</html>
