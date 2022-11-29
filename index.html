@@ -1,273 +1,264 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>个人主页</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    />
+
+    <title>杨梓豪的个人主页</title>
     <link rel="stylesheet" href="./css/index.css" />
-</head>
-
-<body>
-    <!-- <a href="./360极速浏览器/index.html">360极速浏览器</a>
-    <a href="./儿童/index.html">儿童网</a>
-    <a href="./别踩白块/别踩白块.html">别踩白块</a>
-    <a href="./整型/整型.html">整型网</a>
-    <a href="./服装网/index.html">服装网</a>
-    <a href="./钢琴大师/钢琴大师.html">钢琴大师</a>
-    <a href="./翻牌时钟和圆盘时钟/index.html">翻牌和圆盘时钟</a>
-    <a href="./音乐播放器/index.html">js音乐播放器</a>
-    <a href="./轮播图和手风琴/index.html">轮播图和手风琴</a> -->
-
-    <div class="flxed">
-        <div class="head">
-            <div class="img">
-
-            </div>
-        </div>
-        <ul>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12 col-md-3   left d-none d-sm-none d-md-block">
+          <div class="head">
+            <div class="img"></div>
+          </div>
+          <ul class="list">
             <li><a href="#data">资料</a></li>
             <li><a href="#skill">技能</a></li>
             <li><a href="#demo">作品</a></li>
             <!-- <li><a href="#experience">经历</a></li> -->
-        </ul>
-    </div>
+          </ul>
+        </div>
+        <div class="col-12 col-md-9 col-lg  right">
+            <div class="row header d-block d-sm-block   d-md-none d-lg-none">
+                <div class="head">
+                    <div class="img"></div>
+                </div>
+                <ul>
+                    <li><a href="#data">资料</a></li>
+                    <li><a href="#skill">技能</a></li>
+                    <li><a href="#demo">作品</a></li>
+                    <li><a href="#experience">经历</a></li>
+                </ul>
+            </div>
 
-    <div class="main">
-        <div class="bar"></div>
-        <div class="bs">
-            <div class="container-fluid">
-                <div class="row header visited-xs hidden-sm hidden-md hidden-lg">
-                    <div class="head">
-                        <div class="img"></div>
-                    </div>
+            <div class="row msg" id="data">
+                <div class="col-12">
+                    <h2><span class="iconfont">&#xe86a;</span>个人资料</h2>
+                </div>
+                <div class="col-12 col-sm-6 content">
                     <ul>
-                        <li><a href="#data">资料</a></li>
-                        <li><a href="#skill">技能</a></li>
-                        <li><a href="#demo">作品</a></li>
-                        <li><a href="#experience">经历</a></li>
+                        <li>姓名：杨梓豪</li>
+                        <li>籍贯：广东江门</li>
+                        <li>年龄： 21</li>
+                        <li>学历：专科</li>
                     </ul>
                 </div>
-                <div class="row data" id="data">
-                    <div class="col-xs-12">
-                        <h2><span class="iconfont">&#xe86a;</span>个人资料</h2>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 content">
-                        <ul>
-                            <li>姓名：杨梓豪</li>
-                            <li>籍贯：广东江门</li>
-                            <li>年龄： 21</li>
-                            <li>学历：专科</li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 content">
-                        <ul>
-                            <li>QQ:2660331710</li>
-                            <li>GitHub：<span>https://zihaoge.github.io/</span></li>
-                            <li>Email: <span>yzh18128238261@163.com</span></li>
-                            <li>现住：广东江门</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row skill" id="skill">
-                    <div class="col-xs-12">
-                        <h2><span class="iconfont">&#xe644;</span>掌握的技能</h2>
-                    </div>
-                    <div class="col-xs-12 scroll">
-                        <div class="box">
-                            <ul>
-                                <li>
-                                    <div class="icon">
-                                        <div class="bg">
-                                            <i class="fa fa-html5"></i>
-                                        </div>
-                                    </div>
-                                    <h3>HTML5</h3>
-                                    <p>熟练使用HTML5网址的架构和开发</p>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <div class="bg">
-                                            <i class="fa fa-css3"></i>
-                                        </div>
-                                    </div>
-                                    <h3>css3</h3>
-                                    <p>熟练使用HTML5网址的架构和开发</p>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <div class="bg">
-                                            <i class="fa fa-code"></i>
-                                        </div>
-                                    </div>
-                                    <h3>JavaScript</h3>
-                                    <p>熟练使用HTML5网址的架构和开发</p>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <div class="bg">
-                                            <img src="./image/bs.jfif" alt="">
-                                        </div>
-                                    </div>
-                                    <h3>Bootstrap</h3>
-                                    <p>熟练使用HTML5网址的架构和开发</p>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <div class="bg">
-                                            <img src="./image/jq.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <h3>JQuery</h3>
-                                    <p>熟练使用HTML5网址的架构和开发</p>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <div class="bg">
-                                            <img src="./image/vue.jfif" alt="">
-                                        </div>
-                                    </div>
-                                    <h3>VUE</h3>
-                                    <p>熟练使用HTML5网址的架构和开发</p>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="row demo" id="demo">
-                    <div class="col-xs-12">
-                        <h2><span class="iconfont">&#xe637;</span>个人作品</h2>
-                    </div>
-                    <div class="col-xs-12">
-                        <h3>Vue</h3>
-                    </div>
-                    <div class="col-xs-12  col-sm-6">
-                        <a href="./蘑菇街/dist/index.html">
-                            <div class="content">
-                                <img src="./image/蘑菇街.png" alt="">
-                                <p>蘑菇街</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-12  col-sm-6">
-                        <a href="./网易云阅读/dist/index.html">
-                            <div class="content">
-                                <img src="./image/网易云阅读.png" alt="">
-                                <p>网易云阅读</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-12">
-                        <h3>HTML&CSS</h3>
-                    </div>
-                    <div class="col-xs-12  col-sm-6">
-                        <a href="./360极速浏览器/index.html">
-                            <div class="content">
-                                <img src="./image/360浏览器.png" alt="">
-                                <p>360浏览器</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-12  col-sm-6">
-                        <a href="./服装网/index.html">
-                            <div class="content">
-                                <img src="./image/服装网.png" alt="">
-                                <p>服装网</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-12">
-                        <h3>JavaScript</h3>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <a href="./钢琴大师/钢琴大师.html">
-                            <div class="content">
-                                <img src="./image/钢琴大师.png" alt="">
-                                <p>钢琴大师</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <a href="./翻牌时钟和圆盘时钟/index.html">
-                            <div class="content">
-                                <img src="./image/时钟.png" alt="">
-                                <p>翻牌时钟和圆盘时钟</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <a href="./音乐播放器/index.html">
-                            <div class="content">
-                                <img src="./image/音乐播放器.png" alt="">
-                                <p>音乐播放器</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <a href="./轮播图和手风琴/index.html">
-                            <div class="content">
-                                <img src="./image/轮播图和手风琴.png" alt="">
-                                <p>轮播图和手风琴</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- <div class="col-xs-12">
-                        <h3>JQuery</h3>
-                    </div>
-                    <div class="col-xs-12 col-sm-6"></div>
-                    <div class="col-xs-12 col-sm-6"></div> -->
-                    <div class="col-xs-12">
-                        <h3>Bootstrap</h3>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <a href="./儿童/index.html">
-                            <div class="content">
-                                <img src="./image/儿童网.png" alt="">
-                                <p>儿童网</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <a href="./整型/整型.html">
-                            <div class="content">
-                                <img src="./image/整型.png" alt="">
-                                <p>整型网</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- <div class="col-xs-12">
-                        <h3>CSS3</h3>
-                    </div>
-                    <div class="col-xs-12 col-sm-6"></div>
-                    <div class="col-xs-12 col-sm-6"></div> -->
-                </div>
-                <!-- <div class="row experience" id="experience">
-                    <div class="col-xs-12">
-                        <h2><span class="iconfont">&#xe62b;</span>个人经历</h2>
-                    </div>
-                    <div class="col-xs-12">
-                        <ul>
-                            <li>一个程序员</li>
-                            <li>所获证书：互联网高级开发工程师，全国计算机一级，驾驶证</li>
-                            <li>...</li>
-                        </ul>
-                    </div>
-                </div> -->
-                <div class="row footer">
-                    <div class="col-xs-12 text">
-                        <p>&copy; 2022 by zihao</p>
-                    </div>
+                <div class="col-12 col-sm-6 content">
+                    <ul>
+                        <li>QQ:2660331710</li>
+                        <li>GitHub：<span>https://zihaoge.github.io/</span></li>
+                        <li>Email: <span>yzh18128238261@163.com</span></li>
+                        <li>现住：广东江门</li>
+                    </ul>
                 </div>
             </div>
+
+            <div class="row skill" id="skill">
+                <div class="col-12">
+                    <h2><span class="iconfont">&#xe644;</span>掌握的技能</h2>
+                </div>
+                <div class="col-12 scroll">
+                        <ul class="box">
+                            <li>
+                                <div class="icon">
+                                    <div class="bg">
+                                        <i class="fa fa-html5"></i>
+                                    </div>
+                                </div>
+                                <h3>HTML5</h3>
+                                <p>熟练使用HTML5网址的架构和开发</p>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <div class="bg">
+                                        <i class="fa fa-css3"></i>
+                                    </div>
+                                </div>
+                                <h3>css3</h3>
+                                <p>熟悉使用 CSS3 写响应式网站、 动画等</p>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <div class="bg">
+                                        <i class="fa fa-code"></i>
+                                    </div>
+                                </div>
+                                <h3>JavaScript</h3>
+                                <p>熟练使用 JS 制作程序、 交互与特效</p>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <div class="bg">
+                                        <img src="./image/bs.jfif" alt="">
+                                    </div>
+                                </div>
+                                <h3>Bootstrap</h3>
+                                <p>熟练操作BootStrap搭建 页面和框架等</p>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <div class="bg">
+                                        <img src="./image/jq.jpg" alt="">
+                                    </div>
+                                </div>
+                                <h3>JQuery</h3>
+                                <p>熟练使用JQ制作、 用户交互效果</p>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <div class="bg">
+                                        <img src="./image/vue.jfif" alt="">
+                                    </div>
+                                </div>
+                                <h3>VUE</h3>
+                                <p>熟悉VUE搭建框架</p>
+                            </li>
+
+                        </ul>
+                </div>
+            </div>
+
+            <div class="row demo" id="demo">
+                <div class="col-12">
+                    <h2><span class="iconfont">&#xe637;</span>个人作品</h2>
+                </div>
+                <div class="col-12">
+                    <h3>Vue3&Uniapp</h3>
+                </div>
+                <div class="col-12  col-sm-6">
+                    <a href="./网易云阅读/dist/index.html">
+                        <div class="content">
+                            <img src="./image/网易云阅读.png" alt="">
+                            <p>网易云阅读</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12  col-sm-6">
+                    <a href="./uniapp知乎日报/h5/index.html">
+                        <div class="content">
+                            <img src="./image/uniapp知乎日报.png" alt="">
+                            <p>uniapp知乎日报</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12">
+                    <h3>Vue2</h3>
+                </div>
+                <div class="col-12  col-sm-6">
+                    <a href="./网易云音乐/dist/index.html">
+                        <div class="content">
+                            <img src="./image/网易云音乐.png" alt="">
+                            <p>网易云音乐</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12  col-sm-6">
+                    <a href="./蘑菇街/dist/index.html">
+                        <div class="content">
+                            <img src="./image/蘑菇街.png" alt="">
+                            <p>蘑菇街</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="col-12">
+                    <h3>HTML&CSS</h3>
+                </div>
+                <div class="col-12  col-sm-6">
+                    <a href="./360极速浏览器/index.html">
+                        <div class="content">
+                            <img src="./image/360浏览器.png" alt="">
+                            <p>360浏览器</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12  col-sm-6">
+                    <a href="./服装网/index.html">
+                        <div class="content">
+                            <img src="./image/服装网.png" alt="">
+                            <p>服装网</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12">
+                    <h3>JavaScript</h3>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <a href="./钢琴大师/钢琴大师.html">
+                        <div class="content">
+                            <img src="./image/钢琴大师.png" alt="">
+                            <p>钢琴大师</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <a href="./翻牌时钟和圆盘时钟/index.html">
+                        <div class="content">
+                            <img src="./image/时钟.png" alt="">
+                            <p>翻牌时钟和圆盘时钟</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <a href="./音乐播放器/index.html">
+                        <div class="content">
+                            <img src="./image/音乐播放器.png" alt="">
+                            <p>音乐播放器</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <a href="./轮播图和手风琴/index.html">
+                        <div class="content">
+                            <img src="./image/轮播图和手风琴.png" alt="">
+                            <p>轮播图和手风琴</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12">
+                    <h3>Bootstrap</h3>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <a href="./儿童/index.html">
+                        <div class="content">
+                            <img src="./image/儿童网.png" alt="">
+                            <p>儿童网</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <a href="./整型/整型.html">
+                        <div class="content">
+                            <img src="./image/整型.png" alt="">
+                            <p>整型网</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="row footer">
+                <div class="col-12 text">
+                    <p>&copy; 2022 by zihao</p>
+                </div>
+            </div>
+
         </div>
+      </div>
     </div>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-</body>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
